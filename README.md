@@ -1,33 +1,116 @@
-# Ecological computing
+# Ecological Computing
 
-Workspace for vegetation-index image and video processing. The three packaged projects are independent Git repositories with their own Python environments and lockfiles; this parent directory is not currently a Git repository.
+Ecological Computing is the computational methods and data-processing
+domain of the Ecological Interaction ecosystem.
 
-| Folder | Purpose |
-| --- | --- |
-| `conir_to_ndvi_image/` | CONIR image processing with an assumed cyan/orange/NIR channel mapping |
-| `rgb_to_exg_video/` | Excess Green (ExG) video processing |
-| `rgb_to_grvi_video/` | Green-Red Vegetation Index (GRVI) video processing |
-| `ndvi_project/` | Earlier NDVI scripts, input images, and generated results |
+Its purpose is to provide reusable tools for processing ecological
+information through reproducible scientific workflows.
 
-## Standard project layout
+## Relationship to Ecological Information
 
-```text
-<project>/
-├── pyproject.toml
-├── uv.lock
-├── src/<package>/
-├── tests/
-├── docs/
-├── notebooks/
-├── samples/
-├── data/
-│   ├── raw/
-│   └── processed/
-└── outputs/
-```
+Ecological Information organises research references, indicators,
+classifications, datasets and metadata.
 
-Keep reusable code in `src/`, small shareable examples in `samples/`, original local datasets in `data/raw/`, intermediate data in `data/processed/`, and generated results in `outputs/`. Local datasets and outputs are ignored by each project's Git configuration. Full datasets may also remain in external storage.
+Ecological Computing processes data using explicit methods, input
+assumptions and output conventions. Computational outputs should retain
+enough provenance to connect them to their source data and method.
 
-Run environment and Git commands inside the relevant project directory. See each project's README for its environment setup and script-help command.
+Computing supports the wider ecosystem: Understanding teaches methods,
+Intelligence interprets results, Infrastructure enables access and
+deployment, and Generation uses methods and evidence to evaluate
+interventions.
 
-The older `ndvi_project/` retains its original layout because its scripts use relative input and output paths. Existing code, media, virtual environments, and external data references have been preserved. The new directories do not redirect existing scripts automatically.
+## Current project catalogue
+
+### conir_to_ndvi_image
+
+Single-image processing using an assumed cyan/orange/NIR channel mapping.
+It calculates an experimental NIR–Orange normalised difference index
+and produces a colour visualisation.
+
+The assumed sensor mapping and orange-band substitution require explicit
+documentation and validation. The output is not evidence of calibrated
+conventional red-band NDVI.
+
+### rgb_to_exg_video
+
+RGB video processing using raw-channel Excess Green:
+
+`2G - R - B`
+
+The implementation produces a false-colour video from the calculated
+index and selected display range.
+
+### rgb_to_grvi_video
+
+RGB video processing using the Green-Red Vegetation Index:
+
+`(G - R) / (G + R)`
+
+The implementation includes optional preprocessing and visualisation
+controls. Experimental and backup implementations, and a manual frame
+diagnostic, remain part of the development repository.
+
+### soil_organic_carbon
+
+An existing empty ordinary directory. Its scope remains to be defined;
+it is not an established Git repository or implemented software project.
+
+## Repository boundaries and reproducibility
+
+The three processing tools are independent sibling Git repositories.
+Each has its own package metadata, uv lockfile, Python-version
+configuration and local environment.
+
+This umbrella contains the domain catalogue and shared conventions.
+It does not contain copies of project source code or research datasets.
+
+The containing `ecological-computing/` directory is an ordinary
+organisational directory.
+
+Each project should remain independently downloadable and usable.
+Shared conventions do not require a common runtime package.
+
+[SUITE.md](SUITE.md) records formulas, channel assumptions, software
+structure, external dependencies, limitations and development requirements.
+Project-specific usage instructions remain in each project's own README
+and workspace brief.
+
+Permanent project links can be added after repository publication
+has been verified.
+
+## Broader domain scope
+
+Future work may include:
+
+- GIS and spatial computation.
+- Remote-sensing and multispectral processing.
+- Bioinformatics processing.
+- Environmental sensor-data processing.
+- Reusable command-line tools.
+- Reproducible notebooks and computational teaching examples.
+
+These are domain directions, not claims that those capabilities already
+exist in the current repositories.
+
+## Scientific validation and development status
+
+All three processing repositories have initial development commits.
+They contain source implementations and documentation scaffolds, but
+their presence does not establish scientific calibration, supported
+platforms or production readiness.
+
+Before release, validate numerical behaviour, input assumptions,
+dependency resolution, installed commands and representative end-to-end
+workflows. Distinguish numerical index values from clipped, scaled or
+colour-mapped display outputs.
+
+CONIR and GRVI installed commands currently call greeting stubs.
+GRVI processing executes at module level. Automated numerical test
+suites and complete redistributable examples remain future work.
+
+Functional repairs and scientific changes require separate development
+tasks. Establishing this umbrella does not modify processing algorithms.
+
+Licensing, repository citation metadata and publication arrangements
+remain to be agreed. No remote is configured for this umbrella.
