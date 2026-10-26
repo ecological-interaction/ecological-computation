@@ -33,7 +33,9 @@ The initial development commits are:
 | rgb_to_exg_video | 33e8e5f9ae76d82577871284fa6c6fb5f2f2599a |
 | rgb_to_grvi_video | 3122d2bddf9cca13bc7e93387fcd22873e1247e6 |
 
-No remotes are configured for these projects.
+All three projects have configured GitHub remotes. Anonymous HTTP checks on
+2026-10-26 returned 404 for each project URL; see LANDING.md. This does not
+establish whether the repositories are private or unavailable.
 
 Test, documentation, notebook and sample directories contain scaffolding
 guidance. They do not establish an automated test suite or complete

@@ -1,116 +1,172 @@
-# Ecological Computing
+# Ecological Computation
 
-Ecological Computing is the computational methods and data-processing
-domain of the Ecological Interaction ecosystem.
+Computational tools for processing, mapping and analysing ecological data.
 
-Its purpose is to provide reusable tools for processing ecological
-information through reproducible scientific workflows.
+Formats marked “proposed” are not verified capabilities. Expand a component for its development status.
 
-## Relationship to Ecological Information
+## Image and video processing
 
-Ecological Information organises research references, indicators,
-classifications, datasets and metadata.
+<div class="ec-grid">
 
-Ecological Computing processes data using explicit methods, input
-assumptions and output conventions. Computational outputs should retain
-enough provenance to connect them to their source data and method.
+<details class="ec-card">
+<summary title="GRVI — Green–Red Vegetation Index"><strong class="ec-title">GRVI — Green–Red Vegetation Index</strong><br><em class="ec-subtitle">GRVI from RGB</em><br><span class="ec-meta">Video · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Calculates GRVI from the green and red channels of RGB video and produces a false-colour video. Processing and display settings can be adjusted.</em></small></p>
+<p class="ec-status"><small>Development status: Prototype</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-Computing supports the wider ecosystem: Understanding teaches methods,
-Intelligence interprets results, Infrastructure enables access and
-deployment, and Generation uses methods and evidence to evaluate
-interventions.
+<details class="ec-card">
+<summary title="ExG — Excess Green"><strong class="ec-title">ExG — Excess Green</strong><br><em class="ec-subtitle">ExG from RGB</em><br><span class="ec-meta">Video · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Calculates Excess Green from the red, green and blue channels of RGB video. The result is displayed as a false-colour video with an adjustable range.</em></small></p>
+<p class="ec-status"><small>Development status: Prototype</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-## Current project catalogue
+<details class="ec-card">
+<summary title="VARI — Visible Atmospherically Resistant Index"><strong class="ec-title">VARI — Visible Atmospherically Resistant Index</strong><br><em class="ec-subtitle">VARI from RGB</em><br><span class="ec-meta">Image (proposed) · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed tool to calculate VARI using visible RGB channels and show the resulting vegetation-index values. Supported input and output formats remain to be confirmed.</em></small></p>
+<p class="ec-status"><small>Development status: Proposed</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-### conir_to_ndvi_image
+<details class="ec-card">
+<summary title="GLI — Green Leaf Index"><strong class="ec-title">GLI — Green Leaf Index</strong><br><em class="ec-subtitle">GLI from RGB</em><br><span class="ec-meta">Image (proposed) · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed tool to calculate the Green Leaf Index from RGB imagery. It would use the red, green and blue channels to produce a visual representation of index values. Input and output formats remain to be confirmed.</em></small></p>
+<p class="ec-status"><small>Development status: Proposed</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-Single-image processing using an assumed cyan/orange/NIR channel mapping.
-It calculates an experimental NIR–Orange normalised difference index
-and produces a colour visualisation.
+<details class="ec-card">
+<summary title="RGBVI — RGB Vegetation Index"><strong class="ec-title">RGBVI — RGB Vegetation Index</strong><br><em class="ec-subtitle">RGBVI from RGB</em><br><span class="ec-meta">Image (proposed) · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed tool to calculate RGBVI from the red, green and blue channels of imagery. Supported input and output formats remain to be confirmed.</em></small></p>
+<p class="ec-status"><small>Development status: Proposed</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-The assumed sensor mapping and orange-band substitution require explicit
-documentation and validation. The output is not evidence of calibrated
-conventional red-band NDVI.
+<details class="ec-card">
+<summary title="CONIR — NIR–Orange Index"><strong class="ec-title">CONIR — NIR–Orange Index</strong><br><em class="ec-subtitle">Index from cyan–orange–NIR</em><br><span class="ec-meta">Image · <span class="ec-dot ec-processing" aria-hidden="true">●</span> Processing</span></summary>
+<div class="ec-body">
+<p><small><em>Produces a colour visualisation of an experimental NIR–orange normalized difference index from a CONIR image. Assumed channel mapping and sensor response require validation. This is not calibrated conventional red-band NDVI.</em></small></p>
+<p class="ec-status"><small>Development status: Experimental</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-### rgb_to_exg_video
+<details class="ec-card">
+<summary title="Plant Colour Analysis"><strong class="ec-title">Plant Colour Analysis</strong><br><em class="ec-subtitle">Colour measurement from RGB</em><br><span class="ec-meta">Image (proposed) · <span class="ec-dot ec-analysis" aria-hidden="true">●</span> Analysis</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed tool to measure plant colours in RGB photographs and explore their relationship to Munsell notation. Reference charts and measurement standards require investigation.</em></small></p>
+<p class="ec-status"><small>Development status: Research</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-RGB video processing using raw-channel Excess Green:
+</div>
 
-`2G - R - B`
+## Photogrammetry and 3D
 
-The implementation produces a false-colour video from the calculated
-index and selected display range.
+<div class="ec-grid">
 
-### rgb_to_grvi_video
+<details class="ec-card">
+<summary title="Point-Cloud Processing"><strong class="ec-title">Point-Cloud Processing</strong><br><em class="ec-subtitle">Landscape analysis from aerial scans</em><br><span class="ec-meta">3D data (proposed) · <span class="ec-dot ec-3d" aria-hidden="true">●</span> 3D</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed workflow to process aerial point clouds for terrain and landscape analysis. A command-line approach has been discussed.</em></small></p>
+<p class="ec-status"><small>Development status: Proposed workflow</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-RGB video processing using the Green-Red Vegetation Index:
+</div>
 
-`(G - R) / (G + R)`
+## Cartography and spatial analysis
 
-The implementation includes optional preprocessing and visualisation
-controls. Experimental and backup implementations, and a manual frame
-diagnostic, remain part of the development repository.
+<div class="ec-grid">
 
-### soil_organic_carbon
+<details class="ec-card">
+<summary title="Ecological Boundaries"><strong class="ec-title">Ecological Boundaries</strong><br><em class="ec-subtitle">Boundaries from ecological characteristics</em><br><span class="ec-meta">Spatial data (proposed) · <span class="ec-dot ec-mapping" aria-hidden="true">●</span> Mapping</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed workflow to delineate boundaries using ecological characteristics such as land cover and habitat patterns. The selected data and criteria will shape the result.</em></small></p>
+<p class="ec-status"><small>Development status: Developing workflow</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-An existing empty ordinary directory. Its scope remains to be defined;
-it is not an established Git repository or implemented software project.
+<details class="ec-card">
+<summary title="Watershed Delineation"><strong class="ec-title">Watershed Delineation</strong><br><em class="ec-subtitle">Catchments from terrain and water flow</em><br><span class="ec-meta">Spatial data (proposed) · <span class="ec-dot ec-mapping" aria-hidden="true">●</span> Mapping</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed workflow to delineate catchments using terrain and water-flow data. It is being explored through QGIS and related spatial processing tools.</em></small></p>
+<p class="ec-status"><small>Development status: Developing workflow</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-## Repository boundaries and reproducibility
+<details class="ec-card">
+<summary title="Alternative Boundaries"><strong class="ec-title">Alternative Boundaries</strong><br><em class="ec-subtitle">Boundaries from selected criteria</em><br><span class="ec-meta">Spatial data (proposed) · <span class="ec-dot ec-mapping" aria-hidden="true">●</span> Mapping</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed methods for calculating and comparing boundaries using criteria beyond hydrology. Individual criteria and computational methods remain to be defined.</em></small></p>
+<p class="ec-status"><small>Development status: Research</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-The three processing tools are independent sibling Git repositories.
-Each has its own package metadata, uv lockfile, Python-version
-configuration and local environment.
+<details class="ec-card">
+<summary title="Historical Map Extraction"><strong class="ec-title">Historical Map Extraction</strong><br><em class="ec-subtitle">Spatial information from historical maps</em><br><span class="ec-meta">Spatial data (proposed) · <span class="ec-dot ec-extraction" aria-hidden="true">●</span> Extraction</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed workflow to extract usable spatial information from historical maps. Initial source research focuses on Spain and Catalonia.</em></small></p>
+<p class="ec-status"><small>Development status: Research</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-This umbrella contains the domain catalogue and shared conventions.
-It does not contain copies of project source code or research datasets.
+</div>
 
-The containing `ecological-computing/` directory is an ordinary
-organisational directory.
+## Data extraction
 
-Each project should remain independently downloadable and usable.
-Shared conventions do not require a common runtime package.
+<div class="ec-grid">
 
-[SUITE.md](SUITE.md) records formulas, channel assumptions, software
-structure, external dependencies, limitations and development requirements.
-Project-specific usage instructions remain in each project's own README
-and workspace brief.
+<details class="ec-card">
+<summary title="Online Data Extraction"><strong class="ec-title">Online Data Extraction</strong><br><em class="ec-subtitle">Ecological information from online sources</em><br><span class="ec-meta">To be defined · <span class="ec-dot ec-extraction" aria-hidden="true">●</span> Extraction</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed workflow to retrieve and structure ecological data from online sources. Specific sources and processing methods remain to be defined.</em></small></p>
+<p class="ec-status"><small>Development status: Research</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-Permanent project links can be added after repository publication
-has been verified.
+</div>
 
-## Broader domain scope
+## Ecological analysis
 
-Future work may include:
+<div class="ec-grid">
 
-- GIS and spatial computation.
-- Remote-sensing and multispectral processing.
-- Bioinformatics processing.
-- Environmental sensor-data processing.
-- Reusable command-line tools.
-- Reproducible notebooks and computational teaching examples.
+<details class="ec-card">
+<summary title="Vegetation Estimation"><strong class="ec-title">Vegetation Estimation</strong><br><em class="ec-subtitle">Vegetation identification by place</em><br><span class="ec-meta">To be defined · <span class="ec-dot ec-analysis" aria-hidden="true">●</span> Analysis</span></summary>
+<div class="ec-body">
+<p><small><em>Proposed tool to estimate vegetation present in a place using observational or spatial data. Suitable methods and data sources remain to be explored.</em></small></p>
+<p class="ec-status"><small>Development status: Concept</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-These are domain directions, not claims that those capabilities already
-exist in the current repositories.
+<details class="ec-card">
+<summary title="Soil Organic Carbon"><strong class="ec-title">Soil Organic Carbon</strong><br><em class="ec-subtitle">Method and input to be defined</em><br><span class="ec-meta">To be defined · <span class="ec-dot ec-unassigned" aria-hidden="true">●</span> Unassigned</span></summary>
+<div class="ec-body">
+<p><small><em>Placeholder for a possible soil organic carbon computation component. Its intended inputs, outputs and scientific method remain to be defined.</em></small></p>
+<p class="ec-status"><small>Development status: Placeholder; the local directory is empty.</small></p>
+<p class="ec-link"><small><strong>Project link: not yet available</strong></small></p>
+</div>
+</details>
 
-## Scientific validation and development status
+</div>
 
-All three processing repositories have initial development commits.
-They contain source implementations and documentation scaffolds, but
-their presence does not establish scientific calibration, supported
-platforms or production readiness.
-
-Before release, validate numerical behaviour, input assumptions,
-dependency resolution, installed commands and representative end-to-end
-workflows. Distinguish numerical index values from clipped, scaled or
-colour-mapped display outputs.
-
-CONIR and GRVI installed commands currently call greeting stubs.
-GRVI processing executes at module level. Automated numerical test
-suites and complete redistributable examples remain future work.
-
-Functional repairs and scientific changes require separate development
-tasks. Establishing this umbrella does not modify processing algorithms.
-
-Licensing, repository citation metadata and publication arrangements
-remain to be agreed. No remote is configured for this umbrella.
+[Methods and development conventions](SUITE.md) · [Background](BACKGROUND.md)
